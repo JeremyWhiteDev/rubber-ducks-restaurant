@@ -1,0 +1,61 @@
+body {
+    background-color: red;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    text-align: center;
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+
+.section-header {
+    width:95%;
+    margin: 10px auto -10px auto;
+    padding: 0 20px;
+
+}
+.server-section {
+    width: 95%;
+    margin: 10px auto;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.server-section>section{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+
+.server-section section div {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+}
+
+.server-section section ul {
+    display: flex;
+    width: 50%;
+    align-items: baseline;
+    justify-content: space-around;
+    list-style: none;
+    margin: auto;
+}
+.server-section section li {
+    padding: 20px;
+    margin: 0;
+}
+
