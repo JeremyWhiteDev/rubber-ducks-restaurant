@@ -1,12 +1,13 @@
 body {
-    background-color: red;
+    background-color: #1D1E21;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 .header {
     text-align: center;
-    background-color: rgb(32, 32, 32);
+   
     color: white;
 }
 
@@ -19,43 +20,58 @@ body {
 .server-section {
     width: 95%;
     margin: 10px auto;
-    background-color: whitesmoke;
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
     padding: 20px;
+    border: 1px dotted whitesmoke;
 }
 
-.server-section>section{
-    background-color: white;
+.jeremy-order{
+    background-color: #33415c;
+    color: whitesmoke;
     display: flex;
     flex-direction: column;
-    width: 40%;
-    margin: 10px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 550px;
+    margin: 10px auto;
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
 
 }
 
-.server-section section div {
-    display: flex;
-    width: 50%;
-    margin: auto;
-    justify-content: space-around;
-    border-bottom: 1px solid black;
+.complete {
+    background-color: rgb(45, 44, 44);
 }
 
-.server-section section ul {
+.jeremy-header  {
     display: flex;
-    width: 50%;
+    width: 80%;
+    margin: auto;
+    justify-content: space-around;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.server-section section>ul {
+    display: flex;
+    width: 90%;
+    border-bottom: 1px solid black;
+    
     align-items: baseline;
     justify-content: space-around;
     list-style: none;
     margin: auto;
+    padding: 0;
 }
 .server-section section li {
-    padding: 20px;
+    padding: 10px;
     margin: 0;
 }
 
+@media only screen and (max-width: 600px) {
+    .server-section section ul {
+        flex-direction: column;
+    }
+  }
