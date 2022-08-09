@@ -1,3 +1,5 @@
+//create jeremy object with array of order objects.
+
 const jeremy = [
     {
         orderNumber: 101,
@@ -126,19 +128,16 @@ const jeremy = [
 let waiterSection = "";
 
 
-//I'm going to: grab the orders. For each order I'm going to use the order # and Table number as a header. I'm then going to go to the table orderr section and format it to be the following:
-
+//I'm going to: grab the orders. For each order I'm going to use the order # and Table number as a header. I'm then going to go to the table order section and format it to be the following:
 // Drinks: water(seat Number), 
-
 //appetizers: curly fries(seat number),
-
 // main courses: meal(seat Number)
 
-
-for (const bananas of jeremy) {
-    console.log(bananas.orderNumber)
-    waiter = waiter + bananas.orderNumber;
-}
+//loop reminder
+// for (const bananas of jeremy) {
+//     console.log(bananas.orderNumber)
+//     waiter = waiter + bananas.orderNumber;
+// }
 
 
 for (const table of jeremy) {
@@ -158,28 +157,37 @@ for (const table of jeremy) {
      <h3>Table #${table.tableID}</h3><h3>Status: ${table.orderStatus}</div>
      
      <ul><h3>Drinks:</h3>`;
-   
+    
+     //separate loop just targeting drinks 
      for (let i = 0; i < table.tableOrder.length; i++) {
         waiterSection += `
         <li>${table.tableOrder[i]["drink"]}(#${table.tableOrder[i]["guestSeat"]})</li>`;
     }
+    //closing drinks list
     waiterSection += `
     </ul>`
 
+    //separate loop just targeting apps
      waiterSection += `
      <ul><h3>Appetizers:</h3>`;
      for (let i = 0; i < table.tableOrder.length; i++) {
         waiterSection += `
         <li>${table.tableOrder[i]["appetizer"]}(#${table.tableOrder[i]["guestSeat"]})</li>`;
     }
+
+    //closing apps list
     waiterSection += `
     </ul>`
+
+    //separate loop just targeting mains
      waiterSection += `
     <ul><h3>Main Course:</h3>`;
      for (let i = 0; i < table.tableOrder.length; i++) {
         waiterSection += `
         <li>${table.tableOrder[i]["mainCourse"]}(#${table.tableOrder[i]["guestSeat"]})</li>`;
     }
+
+    //closing mains list and entire section
     waiterSection += `
     </ul></section>`
      
