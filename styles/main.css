@@ -1,0 +1,17 @@
+.jt-header {
+    margin: auto;
+    width: 50%;
+    padding: 8px;
+    font-style:italic;
+    display: flex;
+    justify-content: space-evenly;
+    border: 10px solid rgb(0, 0, 0);
+    background-color: rgba(233, 127, 57, 0.986);
+}
+  
+.jt-order {
+    justify-content: center;
+    border: 10px solid rgb(0, 0, 0);
+    background-color: rgba(233, 127, 57, 0.986);
+    font-family: 'Dancing Script';
+}
