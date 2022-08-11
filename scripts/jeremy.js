@@ -103,22 +103,22 @@ const jeremy = [
         tableOrder: [
             {
                 guestSeat: 1,
-                drink: "water",
+                drink: "Cabernet Sauvignon",
                 appetizer: "Curly Fries",
-                mainCourse: "Roasted Turkey Breast",
+                mainCourse: "Chicken Alfredo",
                 rewardsCustomer: true
             },
             {
                 guestSeat: 2,
-                drink: "water",
-                appetizer: "Curly Fries",
-                mainCourse: "Chicken Wings",
+                drink: "Bushwacker",
+                appetizer: "N/A",
+                mainCourse: "Lemon Marinated Checkin",
                 rewardsCustomer: true
             },
             {
                 guestSeat: 3,
-                drink: "water",
-                appetizer: "Curly Fries",
+                drink: "Peach Tea",
+                appetizer: "N/A",
                 mainCourse: "Chicken Wings",
                 rewardsCustomer: true
             }
