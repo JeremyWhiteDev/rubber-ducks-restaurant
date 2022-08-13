@@ -119,6 +119,7 @@ font-family: "Comfortaa", Arial, sans-serif;;
   flex-wrap: wrap;
   padding: 20px;
   border: 1px dotted whitesmoke;
+  box-shadow: 0 0 8px black;
   border-radius: 7px;
 }
 
@@ -566,14 +567,20 @@ h1 {
     flex-direction: column;
     flex-wrap: wrap;
     padding: 20px;
+   
     
 }
 #kyle.server-section {
+  box-shadow: 0 0 8px black;
   background:#33415c ;
   color: #fef9ef;
   font-size: larger;
   border:dotted #fef9ef;
   border-width: thin;
+}
+#kyle ul {
+  box-shadow: 0 0 8px black;
+  padding: 0 ;
 }
 
 #kyle li {
@@ -616,6 +623,7 @@ h1 {
     list-style: none;
     align-items: left;
     background-color: lightgoldenrodyellow;
+    box-shadow: 0 0 8px black;
 }
 
 #mh3 {
@@ -638,6 +646,8 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   border: 10px solid rgb(0, 0, 0);
+  box-shadow: 0 0 6px black;
+  border-radius: 12px;
   background-color: rgba(233, 127, 57, 0.986);
 
 }
@@ -648,7 +658,8 @@ h1 {
   margin: 10px auto;
   justify-content: center;
   border: 10px solid rgb(0, 0, 0);
-  border-radius: 8px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px black;
   background-color: rgba(233, 127, 57, 0.986);
   font-family: 'Dancing Script';
   list-style: none;
