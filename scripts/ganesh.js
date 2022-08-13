@@ -11,41 +11,49 @@ const menu = [
     id: 1,
     name: "Chicken Wings",
     type: "Appetizer",
+    price: 5.99,
   },
   {
     id: 2,
     name: "Fried Pickles",
     type: "Appetizer",
+    price: 4.99,
   },
   {
     id: 3,
     name: "French Fries",
     type: "Appetizer",
+    price: 3.99,
   },
   {
     id: 4,
     name: "Grilled Chicken Sandwich",
     type: "Sandwiches",
+    price: 8.99,
   },
   {
     id: 5,
     name: "Fried Chicken Sandwich",
     type: "Sandwiches",
+    price: 8.99,
   },
   {
     id: 6,
     name: "House Chicken Salad",
     type: "Salad",
+    price: 8.99,
   },
   {
     id: 7,
     name: "Soda",
     type: "Drinks",
+    price: 1.99,
   },
   {
     id: 8,
     name: "Iced Tea",
     type: "Drinks",
+    price: 1.99,
   },
 ];
 
@@ -54,21 +62,29 @@ const orders = [
     id: 1,
     tableId: 1,
     status: "in progress",
+    totalAmount: 47.91,
+    tipAmount: 5.0,
   },
   {
     id: 2,
     tableId: 2,
     status: "in progress",
+    totalAmount: 32.94,
+    tipAmount: 3.0,
   },
   {
     id: 3,
     tableId: 3,
     status: "completed",
+    totalAmount: 32.94,
+    tipAmount: 4.0,
   },
   {
     id: 4,
-    tableId: 4,
-    status: "completed",
+    tableId: "not assigned",
+    status: "not started",
+    totalAmount: 0,
+    tipAmount: 0,
   },
 ];
 
@@ -131,13 +147,13 @@ const tables = [
     ],
   },
   {
-    id: 4,
+    id: "not assigned",
     guests: [
       {
         id: 8,
         guestName: "Victor",
-        foodOrdered: [2, 5, 8],
-        status: "completed",
+        foodOrdered: [],
+        status: "not started",
       },
     ],
   },
@@ -275,10 +291,50 @@ for (const order of orders) {
 
       let ganeshCardGuestOrderItemsUlLi =
         ganeshCardGuestOrderItemsUl.appendChild(
-          createElement("li", `ganesh-none`)
+          createElement("li", `ganesh-card-guest-order-list-item`)
         );
 
-      ganeshCardGuestOrderItemsUlLi.textContent = `${menuOrdered.type}: ${menuOrdered.name}`;
+      ganeshCardGuestOrderItemsUlLi.textContent = `${menuOrdered.type}: ${menuOrdered.name} ........................ $${menuOrdered.price}`;
     }
   }
+
+  let ganeshCardOrderTotalEmpty = ganeshCardOrderParent.appendChild(
+    createElement("div", `ganesh-card-order-total-empty`)
+  );
+  ganeshCardOrderTotalEmpty.textContent = "";
+
+  let ganeshCardOrderTotalLabel = ganeshCardOrderParent.appendChild(
+    createElement("div", `ganesh-card-order-total-label`)
+  );
+  ganeshCardOrderTotalLabel.textContent = "Order Total:";
+
+  let ganeshCardOrderTotalValue = ganeshCardOrderParent.appendChild(
+    createElement("div", `ganesh-card-order-total-value`)
+  );
+  ganeshCardOrderTotalValue.textContent = `$${order.totalAmount}`;
+
+  let ganeshCardOrderTipLabel = ganeshCardOrderParent.appendChild(
+    createElement("div", `ganesh-card-order-tip-label`)
+  );
+  ganeshCardOrderTipLabel.textContent = "Tip:";
+
+  let ganeshCardOrderTipValue = ganeshCardOrderParent.appendChild(
+    createElement("div", `ganesh-card-order-tip-value`)
+  );
+  ganeshCardOrderTipValue.textContent = `$${order.tipAmount}`;
 }
+
+let ganeshCardTotalTipEmpty1 = ganeshSectionParent.appendChild(
+  createElement("div", `ganesh-card-total-tip-empty-1`)
+);
+ganeshCardTotalTipEmpty1.textContent = "";
+
+let ganeshCardTotalTipLabel = ganeshSectionParent.appendChild(
+  createElement("div", `ganesh-card-total-tip-label`)
+);
+ganeshCardTotalTipLabel.textContent = "Total Tip:";
+
+let ganeshCardTotalTipValue = ganeshSectionParent.appendChild(
+  createElement("div", `ganesh-card-total-tip-value`)
+);
+ganeshCardTotalTipValue.textContent = `$12.00`;
