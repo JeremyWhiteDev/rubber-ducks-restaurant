@@ -72,10 +72,10 @@ const mitchell = [
         ]
 //JS to HTML
 
-let htmlSection = '';
+let mitchellhtmlSection = '';
 
 for (const mitchellsOrders of mitchell) {
-    htmlSection += `<div class="card">
+    mitchellhtmlSection += `<div class="card">
     <div class="mitchellContainer">
         <h3 id='mh3'>Table ${mitchellsOrders.tableID}</h3>
         <h4 id='mh4'>Orders</h4>
@@ -89,4 +89,4 @@ for (const mitchellsOrders of mitchell) {
     </div>
 </div>`
 }
-document.getElementById('mitchell').innerHTML = htmlSection
+document.getElementById('mitchell').innerHTML = mitchellhtmlSection
