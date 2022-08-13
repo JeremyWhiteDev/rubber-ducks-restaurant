@@ -46,7 +46,7 @@ const kyle = [
 ]
          
 
-let htmlSection =`<h3 class="section-header">Kyles's Dashboard</h3>`; 
+let htmlSection =`<h3 class="section-header">Kyle's Dashboard</h3>`; 
 for (const order of kyle) {
 htmlSection += ` <h1>Table ${order.tableID}</h1>
 <ul>
