@@ -129,7 +129,7 @@ const jeremy = [
 
 // console.log("hello World")
 
-let waiterSection = "";
+let waiterSection = `<h3 class="section-header">Jeremy's Section</h3>`;
 let jeremyOrderTotal = 0;
 let jeremyTipTotal = 0;
 
@@ -209,7 +209,27 @@ for (const table of jeremy) {
 
 waiterSection += `<div class="jeremy-footer"><h3>Tip Total Today: $${jeremyTipTotal}</h3>
 <h3>Total Orders Completed Today:${jeremyOrderTotal}</h3></div>`
-console.log(waiterSection);
+// console.log(waiterSection);
 
 document.getElementById("jeremy").innerHTML = waiterSection;
+//navbar scrolling 
 
+const navBar = document.getElementById("header-bar")
+
+
+window.onscroll = function () {shrinkNavbar()};
+
+
+
+const shrinkNavbar = () => {
+     if (document.body.scrollTop > 80|| document.documentElement.scrollTop > 80) {
+        // navBar.style.height = "100px"
+        navBar.classList.add("shrink-header");
+
+    } else { 
+        navBar.classList.remove("shrink-header");
+   
+        // navBar.style.height = "150px"
+    }
+
+}
