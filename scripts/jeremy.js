@@ -208,7 +208,7 @@ for (const table of jeremy) {
 }
 
 waiterSection += `<div class="jeremy-footer"><h3>Tip Total Today: $${jeremyTipTotal}</h3>
-<h3>Total Orders Completed Today:${jeremyOrderTotal}</h3></div>`
+<h3>Total Orders Completed Today: ${jeremyOrderTotal}</h3></div>`
 // console.log(waiterSection);
 
 document.getElementById("jeremy").innerHTML = waiterSection;

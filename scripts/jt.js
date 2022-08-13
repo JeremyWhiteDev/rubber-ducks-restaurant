@@ -15,7 +15,7 @@ const jt = [
             },
             {
                 
-                guestSeat: 1,
+                guestSeat: 2,
                 drink: "Sweet Tea",
                 side: "French Fries",
                 mainCourse: "Mild Wings",
@@ -39,7 +39,7 @@ const jt = [
             },
             {  
                  
-                guestSeat: 1,
+                guestSeat: 2,
                 drink: "Sweet Tea",
                 side: "French Fries",
                 mainCourse: "Mild Wings",
@@ -47,7 +47,7 @@ const jt = [
             },   
             {  
                  
-                guestSeat: 1,
+                guestSeat: 3,
                 drink: "Sweet Tea",
                 side: "French Fries",
                 mainCourse: "Mild Wings",
@@ -71,7 +71,7 @@ const jt = [
             },
             {
                     
-                    guestSeat: 1,
+                    guestSeat: 2,
                     drink: "Water",
                     side: "Mac and Cheese bites",
                     mainCourse:"Medium Hot Wings",
@@ -79,7 +79,7 @@ const jt = [
             },
             {
                     
-                    guestSeat: 1,
+                    guestSeat: 3,
                     drink: "Sweet Tea",
                     side: "French Fries",
                     mainCourse: "Mild Wings",
@@ -87,7 +87,7 @@ const jt = [
             },
             {   
                     
-                    guestSeat: 1,
+                    guestSeat: 4,
                     drink: "Sweet Tea",
                     side: "French Fries",
                     mainCourse: "Mild Wings",
@@ -120,7 +120,7 @@ for (const table of jt) {
      <div class="jt-header"><h1>Order #${table.orderNumber}</h1>
      <h3>Table #${table.tableID}</h3><h3>Status: ${table.orderStatus}</div>
      
-     <ul><h3>Drinks:</h3>`;
+     <ul class="jt-order-contents"><h3>Drinks:</h3>`;
     
     
      for (let i = 0; i < table.tableOrder.length; i++) {
@@ -133,7 +133,7 @@ for (const table of jt) {
 
     
      htmlSection += `
-     <ul><h3>Sides:</h3>`;
+     <ul class="jt-order-contents"><h3>Sides:</h3>`;
      for (let i = 0; i < table.tableOrder.length; i++) {
         htmlSection += `
         <li>${table.tableOrder[i]["side"]}(#${table.tableOrder[i]["guestSeat"]})</li>`;
@@ -143,7 +143,7 @@ for (const table of jt) {
     </ul>`
 
      htmlSection += `
-    <ul><h3>Main Course:</h3>`;
+    <ul class="jt-order-contents"><h3>Main Course:</h3>`;
      for (let i = 0; i < table.tableOrder.length; i++) {
         htmlSection += `
         <li>${table.tableOrder[i]["mainCourse"]}(#${table.tableOrder[i]["guestSeat"]})</li>`;

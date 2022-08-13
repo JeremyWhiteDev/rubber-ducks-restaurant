@@ -119,6 +119,7 @@ font-family: "Comfortaa", Arial, sans-serif;;
   flex-wrap: wrap;
   padding: 20px;
   border: 1px dotted whitesmoke;
+  border-radius: 7px;
 }
 
 .jeremy-order {
@@ -131,6 +132,7 @@ font-family: "Comfortaa", Arial, sans-serif;;
   width: 650px;
   margin: 10px auto;
   border: 2px solid black;
+  box-shadow: 0 0 6px black;
   border-radius: 10px;
   padding: 10px;
 }
@@ -161,6 +163,7 @@ h3 {
 }
 
 .jeremy-footer h3 {
+  text-align: center;
   width: 40%;
   margin: 10px auto;
   color: white;
@@ -540,10 +543,12 @@ h1 {
     
 }
 #kyle.server-section {
+  margin: 25px;
   background:#33415c ;
   color: #fef9ef;
   font-size: larger;
   border:dotted #fef9ef;
+  border-radius: 8px;
   border-width: thin;
 }
 
@@ -596,7 +601,8 @@ h1 {
     border: 2px solid black;
     background-color: rgb(252, 252, 127);
     border-radius: 10px;
-    margin: 5px;
+    width: 97%;
+    margin: 15px auto;
 }
 
 #mli {
@@ -633,11 +639,22 @@ h1 {
   justify-content: space-evenly;
   border: 10px solid rgb(0, 0, 0);
   background-color: rgba(233, 127, 57, 0.986);
+
 }
 
 .jt-order {
+  width: 96%;
+  padding: 8px;
+  margin: 10px auto;
   justify-content: center;
   border: 10px solid rgb(0, 0, 0);
+  border-radius: 8px;
   background-color: rgba(233, 127, 57, 0.986);
   font-family: 'Dancing Script';
+  list-style: none;
+
+}
+
+.jt-order-contents {
+  list-style: none;
 }

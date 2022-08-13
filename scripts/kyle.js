@@ -46,9 +46,9 @@ const kyle = [
 ]
          
 
-let htmlSection =`<h3 class="section-header">Kyle's Dashboard</h3>`; 
+let kylehtmlSection =`<h3 class="section-header">Kyle's Dashboard</h3>`; 
 for (const order of kyle) {
-htmlSection += ` <h1>Table ${order.tableID}</h1>
+kylehtmlSection += ` <h1>Table ${order.tableID}</h1>
 <ul>
     <li> Order Number: ${order.orderNumber}</li>
     <li>Order Status: ${order.orderStatus}</li>
@@ -62,4 +62,4 @@ htmlSection += ` <h1>Table ${order.tableID}</h1>
 
 }
 // Sending JavaScript to HTML//
-document.getElementById('kyle').innerHTML = htmlSection
+document.getElementById('kyle').innerHTML = kylehtmlSection
