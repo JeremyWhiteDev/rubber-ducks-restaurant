@@ -1,3 +1,7 @@
+import { getWaiters } from "./data.js";
+import { getOrders } from "./data.js";
+import { getGuestOrders } from "./data.js";
+
 const waiters = [
   {
     id: 1,

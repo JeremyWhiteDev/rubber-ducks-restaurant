@@ -1,3 +1,7 @@
+import { getWaiters } from "./data.js";
+import { getOrders } from "./data.js";
+import { getGuestOrders } from "./data.js";
+
 const kyle = [
     {
         orderNumber: 1001,

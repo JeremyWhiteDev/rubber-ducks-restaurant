@@ -1,23 +1,35 @@
+import { getWaiters } from "./data.js";
+import { getOrders } from "./data.js";
+import { getGuestOrders } from "./data.js";
+
+const waiterCopy = getWaiters();
+// console.log(waiterCopy);
+
+ const ordersCopy = getOrders();
+// console.log(ordersCopy)
+
+const guestOrdersCopy = getGuestOrders();
+//console.log(guestOrdersCopy)
+
 const jt = [
     {
             
-        orderNumber: 701,
-            orderStatus: "Complete",
+        orderID: 701,
             tableID: 7,
             tableOrder: [
             {
                 
                 guestSeat: 1,
-                drink: "Sweet Tea",
-                side: "French Fries",
+                drinks: "Sweet Tea",
+                appetizer: "French Fries",
                 mainCourse: "Hot Chicken Wings",
                 rewardsCustomer: true
             },
             {
                 
                 guestSeat: 2,
-                drink: "Sweet Tea",
-                side: "French Fries",
+                drinks: "Sweet Tea",
+                appetizer: "French Fries",
                 mainCourse: "Mild Wings",
                 rewardsCustomer: true 
             }
@@ -26,30 +38,30 @@ const jt = [
             {
             
             orderNumber: 801,
-            orderStatus: "Complete",
+           
             tableID: 8,
             tableOrder: [
             {
                 
                 guestSeat: 1,
-                drink: "Water",
-                side: "Mac and Cheese bites",
+                drinks: "Water",
+                appetizer: "Mac and Cheese bites",
                 mainCourse:"Medium Hot Wings",
                 rewardsCustomer:false
             },
             {  
                  
                 guestSeat: 2,
-                drink: "Sweet Tea",
-                side: "French Fries",
+                drinks: "Sweet Tea",
+                appetizer: "French Fries",
                 mainCourse: "Mild Wings",
                 rewardsCustomer: true
             },   
             {  
                  
                 guestSeat: 3,
-                drink: "Sweet Tea",
-                side: "French Fries",
+                drinks: "Sweet Tea",
+                appetizer: "French Fries",
                 mainCourse: "Mild Wings",
                 rewardsCustomer: true 
             }
@@ -58,38 +70,37 @@ const jt = [
             {
 
             orderNumber: 901,
-            orderStatus: "Not Complete",
             tableID: 9,
             tableOrder: [
             {
                      
                     guestSeat:1,
-                    drink: "Coke a cola",
-                    side: "Cheese Fries",
+                    drinks: "Coke a cola",
+                    appetizer: "Cheese Fries",
                     mainCourse: "Extremely Hot Wings",
                     rewardsCustomer: true
             },
             {
                     
                     guestSeat: 2,
-                    drink: "Water",
-                    side: "Mac and Cheese bites",
+                    drinks: "Water",
+                    appetizer: "Mac and Cheese bites",
                     mainCourse:"Medium Hot Wings",
                     rewardsCustomer:false
             },
             {
                     
                     guestSeat: 3,
-                    drink: "Sweet Tea",
-                    side: "French Fries",
+                    drinks: "Sweet Tea",
+                    appetizer: "French Fries",
                     mainCourse: "Mild Wings",
                     rewardsCustomer: true
             },
             {   
                     
                     guestSeat: 4,
-                    drink: "Sweet Tea",
-                    side: "French Fries",
+                    drinks: "Sweet Tea",
+                    appetizer: "French Fries",
                     mainCourse: "Mild Wings",
                     rewardsCustomer: true
             }
@@ -156,6 +167,6 @@ for (const table of jt) {
    
 
 }
-console.log(htmlSection);
+//console.log(htmlSection);
 
 document.getElementById("jt").innerHTML = htmlSection;

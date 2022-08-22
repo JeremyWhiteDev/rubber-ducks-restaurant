@@ -1,3 +1,6 @@
+import { getWaiters } from "./data.js";
+import { getOrders } from "./data.js";
+import { getGuestOrders } from "./data.js";
 
 const mitchell = [
      {
@@ -25,50 +28,50 @@ const mitchell = [
                 rewardsCustomer: false  
             }
     },
-    tableFive = {
-        id:2,
-        orderNumber: 501,
-        tableID: 5,
-        drinks: "The Canvasback",
-        appetizer: "Cheese Curds",
-        mainCourse: "What the Duck",
-        rewardsCustomer: true,
-        tableOrder: 
-            {
-                id:1,
-                guestSeat: 1,
-                drink: "The Canvasback",
-                appetizer: "Cheese Curds",
-                mainCourse: "What the Duck",
-                rewardsCustomer: true    
-            }
-    },
-    tableSix = {
-        id:3,
-        tableNumber: 6,
-        orderNumber: 601,
-        tableID: 6,
-        drinks: 'The Mallard, Domestic Duck',
-        appetizer: 'Krinkle Cut Fries, Fried Pickles',
-        mainCourse: 'Rubber Duck Special, Chicken Tenders',
-        rewardsCustomer: true,
-        tableOrderOne: 
-              {
-                guestSeat: 1,
-                drink: "The Mallard",
-                appetizer: "Krinkle Cut Fries",
-                mainCourse: "Rubber Duck Special",
-                rewardsCustomer: true  
-            },
-        tableOrderTwo:
-            {
-                guestSeat: 2,
-                drink: "Domestic Duck",
-                appetizer: "Fried Pickles",
-                mainCourse: "Chicken Tenders",
-                rewardsCustomer: false  
-            }
-          }   
+    // tableFive = {
+    //     id:2,
+    //     orderNumber: 501,
+    //     tableID: 5,
+    //     drinks: "The Canvasback",
+    //     appetizer: "Cheese Curds",
+    //     mainCourse: "What the Duck",
+    //     rewardsCustomer: true,
+    //     tableOrder: 
+    //         {
+    //             id:1,
+    //             guestSeat: 1,
+    //             drink: "The Canvasback",
+    //             appetizer: "Cheese Curds",
+    //             mainCourse: "What the Duck",
+    //             rewardsCustomer: true    
+    //         }
+    // },
+    // tableSix = {
+    //     id:3,
+    //     tableNumber: 6,
+    //     orderNumber: 601,
+    //     tableID: 6,
+    //     drinks: 'The Mallard, Domestic Duck',
+    //     appetizer: 'Krinkle Cut Fries, Fried Pickles',
+    //     mainCourse: 'Rubber Duck Special, Chicken Tenders',
+    //     rewardsCustomer: true,
+    //     tableOrderOne: 
+    //           {
+    //             guestSeat: 1,
+    //             drink: "The Mallard",
+    //             appetizer: "Krinkle Cut Fries",
+    //             mainCourse: "Rubber Duck Special",
+    //             rewardsCustomer: true  
+    //         },
+    //     tableOrderTwo:
+    //         {
+    //             guestSeat: 2,
+    //             drink: "Domestic Duck",
+    //             appetizer: "Fried Pickles",
+    //             mainCourse: "Chicken Tenders",
+    //             rewardsCustomer: false  
+    //         }
+    //       }   
         ]
 //JS to HTML
 
