@@ -397,3 +397,15 @@ const guestOrders = [
     //Ganesh's guest orders
 
 ]
+export const getWaiters = () => {
+    const copyOfWaiters = waiters.map(server => ({...server}))
+    return copyOfWaiters
+}
+export const getOrders = () => {
+    const copyOfOrders = orders.map(order => ({...order}))
+    return copyOfOrders
+}
+export const getGuestOrders = () => {
+    const copyOfGuestOrders = guestOrders.map(guest => ({...guest}))
+    return copyOfGuestOrders
+}

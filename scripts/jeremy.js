@@ -1,3 +1,7 @@
+import { getWaiters } from "./data.js";
+import { getOrders } from "./data.js";
+import { getGuestOrders } from "./data.js";
+
 //create jeremy object with array of order objects.
 
 const jeremy = [

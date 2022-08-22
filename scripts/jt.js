@@ -1,5 +1,15 @@
+import { getWaiters } from "./data.js";
+import { getOrders } from "./data.js";
+import { getGuestOrders } from "./data.js";
 
+const waiterCopy = getWaiters();
+// console.log(waiterCopy);
 
+ const ordersCopy = getOrders();
+// console.log(ordersCopy)
+
+const guestOrdersCopy = getGuestOrders();
+//console.log(guestOrdersCopy)
 
 const jt = [
     {
@@ -157,6 +167,6 @@ for (const table of jt) {
    
 
 }
-console.log(htmlSection);
+//console.log(htmlSection);
 
 document.getElementById("jt").innerHTML = htmlSection;
