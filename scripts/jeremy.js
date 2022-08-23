@@ -287,6 +287,14 @@ const displayJeremysOrders = () => {
     document.getElementById("jeremy").innerHTML = jeremySection;
 }
 
+
+
+const guestOrdersCopy = getGuestOrders();
+const ordersCopy = getOrders()
+const jeremyGuestOrders = guestOrdersCopy.filter(x => {
+    ordersCopy.find(x => ()
+})
+
 //RUN FUNCTION
 displayJeremysOrders()
 
