@@ -130,8 +130,8 @@ const orders = [
     },
     {
         id: 1201,
-        tableID: 4,
-        waiterID: 1,
+        tableID: 12,
+        waiterID: 4,
         orderTotal: 50.00,
         tip: 12
 
