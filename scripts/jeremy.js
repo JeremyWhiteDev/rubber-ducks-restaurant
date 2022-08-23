@@ -283,7 +283,7 @@ const displayJeremysOrders = () => {
             jeremySection += "</ul></section>"
         }
     }
-    //PUT FINAL VVARIABLE ON DOM
+    //PUT FINAL VARIABLE ON DOM
     document.getElementById("jeremy").innerHTML = jeremySection;
 }
 
