@@ -1,232 +1,302 @@
+//IMPORTING DATA FROM SOURCE
 import { getWaiters } from "./data.js";
 import { getOrders } from "./data.js";
 import { getGuestOrders } from "./data.js";
 
-//create jeremy object with array of order objects.
 
-const jeremy = [
-    {   id: 1,
-        orderNumber: 101,
-        orderStatus: "Active",
-        tableID: 1,
-        tip: 3,
-        tableOrder: [
-            {   id: 1,
-                guestSeat: 1,
-                drink: "Water",
-                appetizer: "Curly Fries",
-                mainCourse: "Turkey Leg",
-                rewardsCustomer: true
-            },
-            {   id: 2,
-                guestSeat: 2,
-                drink: "Coke",
-                appetizer: "N/A",
-                mainCourse: "What the Duck Whole Duck",
-                rewardsCustomer: false
-            },
-            {   id: 3,
-                guestSeat: 3,
-                drink: "Water No Lemon",
-                appetizer: "Cheese Sticks",
-                mainCourse: "Duck Confit",
-                rewardsCustomer: false
-            },
-            {   id:4,
-                guestSeat: 4,
-                drink: "Water No Lemon",
-                appetizer: "Duck Yeah Onion Rings",
-                mainCourse: "Turkey Burger",
-                rewardsCustomer: false
-            }
-        ]
-    },
-    {   id: 5,
-        orderNumber: 102,
-        orderStatus: "Complete",
-        tip: 20,
-        tableID: 1,
-        tableOrder: [
-            {   id: 6,
-                guestSeat: 1,
-                drink: "Old Fahioned",
-                appetizer: "Bread with Duck Butter",
-                mainCourse: "Spatchcocks with Herbs",
-                rewardsCustomer: true
-            },
-            {   id: 7,
-                guestSeat: 2,
-                drink: "Beareded Iris Homestyle IPA",
-                appetizer: "Curly Fries",
-                mainCourse: "Badass Chicken Wings",
-                rewardsCustomer: true
-            },
-            {   id: 8,
-                guestSeat: 3,
-                drink: "Iced Tea",
-                appetizer: "N/A",
-                mainCourse: "Quail Egg Sandwich",
-                rewardsCustomer: true
-            }
-        ]
-    },
-    {   id: 9,
-        orderNumber: 201,
-        tableID: 2,
-        orderStatus: "Active",
-        tip: 0,
-        tableOrder: [
-            {   id: 10,
-                guestSeat: 1,
-                drink: "Old Fahioned",
-                appetizer: "Bread with Duck Butter",
-                mainCourse: "Peking Duck Pizza",
-                rewardsCustomer: true
-            },
-            {   id: 11,
-                guestSeat: 2,
-                drink: "Beareded Iris Homestyle IPA",
-                appetizer: "Curly Fries",
-                mainCourse: "Roasted Pheasant",
-                rewardsCustomer: true
-            },
-            {   id: 12,
-                guestSeat: 3,
-                drink: "Iced Tea",
-                appetizer: "N/A",
-                mainCourse: "Quail Egg Sandwich",
-                rewardsCustomer: true
-            }
-        ]
-    },
-    {   id: 13,
-        orderNumber: 301,
-        tableID: 3,
-        orderStatus: "Active",
-        tip: 0,
-        tableOrder: [
-            {
-                guestSeat: 1,
-                drink: "Cabernet Sauvignon",
-                appetizer: "Curly Fries",
-                mainCourse: "Chicken Alfredo",
-                rewardsCustomer: true
-            },
-            {
-                guestSeat: 2,
-                drink: "Bushwacker",
-                appetizer: "N/A",
-                mainCourse: "Lemon Marinated Checkin",
-                rewardsCustomer: true
-            },
-            {
-                guestSeat: 3,
-                drink: "Peach Tea",
-                appetizer: "N/A",
-                mainCourse: "Chicken Wings",
-                rewardsCustomer: true
-            }
-        ]
-    }
+//RESTAURANT PART 1
+
+//CREATE JEREMY OBJECT WITH ARRAY OF ORDERS
+// const jeremy = [
+//     {   id: 1,
+//         orderNumber: 101,
+//         orderStatus: "Active",
+//         tableID: 1,
+//         tip: 3,
+//         tableOrder: [
+//             {   id: 1,
+//                 guestSeat: 1,
+//                 drink: "Water",
+//                 appetizer: "Curly Fries",
+//                 mainCourse: "Turkey Leg",
+//                 rewardsCustomer: true
+//             },
+//             {   id: 2,
+//                 guestSeat: 2,
+//                 drink: "Coke",
+//                 appetizer: "N/A",
+//                 mainCourse: "What the Duck Whole Duck",
+//                 rewardsCustomer: false
+//             },
+//             {   id: 3,
+//                 guestSeat: 3,
+//                 drink: "Water No Lemon",
+//                 appetizer: "Cheese Sticks",
+//                 mainCourse: "Duck Confit",
+//                 rewardsCustomer: false
+//             },
+//             {   id:4,
+//                 guestSeat: 4,
+//                 drink: "Water No Lemon",
+//                 appetizer: "Duck Yeah Onion Rings",
+//                 mainCourse: "Turkey Burger",
+//                 rewardsCustomer: false
+//             }
+//         ]
+//     },
+//     {   id: 5,
+//         orderNumber: 102,
+//         orderStatus: "Complete",
+//         tip: 20,
+//         tableID: 1,
+//         tableOrder: [
+//             {   id: 6,
+//                 guestSeat: 1,
+//                 drink: "Old Fahioned",
+//                 appetizer: "Bread with Duck Butter",
+//                 mainCourse: "Spatchcocks with Herbs",
+//                 rewardsCustomer: true
+//             },
+//             {   id: 7,
+//                 guestSeat: 2,
+//                 drink: "Beareded Iris Homestyle IPA",
+//                 appetizer: "Curly Fries",
+//                 mainCourse: "Badass Chicken Wings",
+//                 rewardsCustomer: true
+//             },
+//             {   id: 8,
+//                 guestSeat: 3,
+//                 drink: "Iced Tea",
+//                 appetizer: "N/A",
+//                 mainCourse: "Quail Egg Sandwich",
+//                 rewardsCustomer: true
+//             }
+//         ]
+//     },
+//     {   id: 9,
+//         orderNumber: 201,
+//         tableID: 2,
+//         orderStatus: "Active",
+//         tip: 0,
+//         tableOrder: [
+//             {   id: 10,
+//                 guestSeat: 1,
+//                 drink: "Old Fahioned",
+//                 appetizer: "Bread with Duck Butter",
+//                 mainCourse: "Peking Duck Pizza",
+//                 rewardsCustomer: true
+//             },
+//             {   id: 11,
+//                 guestSeat: 2,
+//                 drink: "Beareded Iris Homestyle IPA",
+//                 appetizer: "Curly Fries",
+//                 mainCourse: "Roasted Pheasant",
+//                 rewardsCustomer: true
+//             },
+//             {   id: 12,
+//                 guestSeat: 3,
+//                 drink: "Iced Tea",
+//                 appetizer: "N/A",
+//                 mainCourse: "Quail Egg Sandwich",
+//                 rewardsCustomer: true
+//             }
+//         ]
+//     },
+//     {   id: 13,
+//         orderNumber: 301,
+//         tableID: 3,
+//         orderStatus: "Active",
+//         tip: 0,
+//         tableOrder: [
+//             {
+//                 guestSeat: 1,
+//                 drink: "Cabernet Sauvignon",
+//                 appetizer: "Curly Fries",
+//                 mainCourse: "Chicken Alfredo",
+//                 rewardsCustomer: true
+//             },
+//             {
+//                 guestSeat: 2,
+//                 drink: "Bushwacker",
+//                 appetizer: "N/A",
+//                 mainCourse: "Lemon Marinated Checkin",
+//                 rewardsCustomer: true
+//             },
+//             {
+//                 guestSeat: 3,
+//                 drink: "Peach Tea",
+//                 appetizer: "N/A",
+//                 mainCourse: "Chicken Wings",
+//                 rewardsCustomer: true
+//             }
+//         ]
+//     }
     
-]
+// ]
 
-// console.log("hello World")
+//START HTML CODE
+// let waiterSection = `<h3 class="section-header">Jeremy's Section</h3>`;
+// let jeremyOrderTotal = 0;
+// let jeremyTipTotal = 0;
 
-let waiterSection = `<h3 class="section-header">Jeremy's Section</h3>`;
-let jeremyOrderTotal = 0;
-let jeremyTipTotal = 0;
+//ALGORITHM for FOR LOOP
+//  I'm going to: grab the orders. For each order I'm going to use the order # and Table    number as a header. I'm then going to go to the table order section and format it to be the following:
+//  Drinks: water(seat Number), 
+//  appetizers: curly fries(seat number),
+//  main courses: meal(seat Number)
 
-//I'm going to: grab the orders. For each order I'm going to use the order # and Table number as a header. I'm then going to go to the table order section and format it to be the following:
-// Drinks: water(seat Number), 
-//appetizers: curly fries(seat number),
-// main courses: meal(seat Number)
+//START FOR LOOP
+// for (const table of jeremy) {
+    //IF ORDER IS COMPLETE, ADD "complete" CLASS
+    //  if (table.orderStatus === "Complete") {
+    //     jeremyTipTotal += table.tip;
+    //     jeremyOrderTotal += 1;
+    //     waiterSection += `
+    //  <section class ="jeremy-order complete">
+    //  <div class="jeremy-header"><h1>Order #${table.orderNumber}</h1>
+    //  <h3>Table #${table.tableID}</h3><h3>Status: ${table.orderStatus}</h3><h3>Tip for Order: $${table.tip}</div>
+    //  </section>`
 
-//loop reminder
-// for (const bananas of jeremy) {
-//     console.log(bananas.orderNumber)
-//     waiter = waiter + bananas.orderNumber;
+    //ELSE, JUST ADD START OF HTMLSECTION
+//     } else {
+//         waiterSection += `
+//      <section class ="jeremy-order">`
+
+
+//      // ADD DIV FOR HEADER AND START SECTION FOR DRINKS
+//     waiterSection +=`
+//      <div class="jeremy-header"><h1>Order #${table.orderNumber}</h1>
+//      <h3>Table #${table.tableID}</h3><h3>Status: ${table.orderStatus}</div>
+     
+//      <ul><h3>Drinks:</h3>`;
+    
+//      //SEPARATE LOOP FOR JUST TARGETING DRINKS
+//      for (let i = 0; i < table.tableOrder.length; i++) {
+//         waiterSection += `
+//         <li>Seat ${table.tableOrder[i]["guestSeat"]}: ${table.tableOrder[i]["drink"]}</li>`;
+//     }
+//     //CLOSING DRINKS LIST
+//     waiterSection += `
+//     </ul>`
+
+//     //SEPARATE LOOP FOR JUST TARGETING APPS
+//      waiterSection += `
+//      <ul><h3>Appetizers:</h3>`;
+//      for (let i = 0; i < table.tableOrder.length; i++) {
+//         waiterSection += `
+//         <li>Seat ${table.tableOrder[i]["guestSeat"]}: ${table.tableOrder[i]["appetizer"]}</li>`;
+//     }
+
+//     //CLOSING APPS LIST
+//     waiterSection += `
+//     </ul>`
+
+//     //SEPARATE LOOP JUST TARGETING MAINS
+//      waiterSection += `
+//     <ul><h3>Main Course:</h3>`;
+//      for (let i = 0; i < table.tableOrder.length; i++) {
+//         waiterSection += `
+//         <li>Seat ${table.tableOrder[i]["guestSeat"]}: ${table.tableOrder[i]["mainCourse"]}</li>`;
+//     }
+
+//     //CLOSING MAINS LIST AND ENTIRE ORDER SECTION
+//     waiterSection += `
+//     </ul></section>`
 // }
 
 
-for (const table of jeremy) {
-    //if order is complete, then add section with additional "complete" class with different styling"
-     if (table.orderStatus === "Complete") {
-        jeremyTipTotal += table.tip;
-        jeremyOrderTotal += 1;
-        waiterSection += `
-     <section class ="jeremy-order complete">
-     <div class="jeremy-header"><h1>Order #${table.orderNumber}</h1>
-     <h3>Table #${table.tableID}</h3><h3>Status: ${table.orderStatus}</h3><h3>Tip for Order: $${table.tip}</div>
-     
-     </section>`
+// }
 
-    //else, just add section with "jeremy-order"
-    } else {
-        waiterSection += `
-     <section class ="jeremy-order">`
-
-
-     // add div for header of card and start ul for drinks
-    waiterSection +=`
-     <div class="jeremy-header"><h1>Order #${table.orderNumber}</h1>
-     <h3>Table #${table.tableID}</h3><h3>Status: ${table.orderStatus}</div>
-     
-     <ul><h3>Drinks:</h3>`;
-    
-     //separate loop just targeting drinks 
-     for (let i = 0; i < table.tableOrder.length; i++) {
-        waiterSection += `
-        <li>Seat ${table.tableOrder[i]["guestSeat"]}: ${table.tableOrder[i]["drink"]}</li>`;
-    }
-    //closing drinks list
-    waiterSection += `
-    </ul>`
-
-    //separate loop just targeting apps
-     waiterSection += `
-     <ul><h3>Appetizers:</h3>`;
-     for (let i = 0; i < table.tableOrder.length; i++) {
-        waiterSection += `
-        <li>Seat ${table.tableOrder[i]["guestSeat"]}: ${table.tableOrder[i]["appetizer"]}</li>`;
-    }
-
-    //closing apps list
-    waiterSection += `
-    </ul>`
-
-    //separate loop just targeting mains
-     waiterSection += `
-    <ul><h3>Main Course:</h3>`;
-     for (let i = 0; i < table.tableOrder.length; i++) {
-        waiterSection += `
-        <li>Seat ${table.tableOrder[i]["guestSeat"]}: ${table.tableOrder[i]["mainCourse"]}</li>`;
-    }
-
-    //closing mains list and entire section
-    waiterSection += `
-    </ul></section>`
-}
-
-
-}
-
-waiterSection += `<div class="jeremy-footer"><h3>Tip Total Today: $${jeremyTipTotal}</h3>
-<h3>Total Orders Completed Today: ${jeremyOrderTotal}</h3></div>`
+//ADD SEPERATE DIV FOR TIP TOTALS AND TOTAL ORDERS COMPLETED.
+// waiterSection += `<div class="jeremy-footer"><h3>Tip Total Today: $${jeremyTipTotal}</h3>
+// <h3>Total Orders Completed Today: ${jeremyOrderTotal}</h3></div>`
 // console.log(waiterSection);
 
-document.getElementById("jeremy").innerHTML = waiterSection;
-//navbar scrolling 
+//DISPLAY ON DOM
+// document.getElementById("jeremy").innerHTML = waiterSection;
 
-const navBar = document.getElementById("header-bar")
 
+
+
+
+
+
+//RESTAURANT PART 2
+
+//ALGORITHM FOR DATA RESTRECTURE
+// step one :  loop through ordersCopy
+// step two: if the current object of the orderCopy loop has a waiterID that matches 1, then....
+//step three: loop through the orders array, and if the current object of that loop has an orderID that matches the  id of the current object in ordersCopy, then....
+//step four: print that value to the HTML
+//step five: repeat steps 3&4 for appetizers and mains
+
+//FUNCTION FOR DISPLAYING ORDERS TO DOM
+const displayJeremysOrders = () => {
+
+    // ASSIGN DATA COPIES TO VARIABLES
+    const waiterCopy = getWaiters();
+    const ordersCopy = getOrders();
+    const guestOrdersCopy = getGuestOrders();
+
+    //START HTML SECTION
+    let jeremySection = `<h3 class="section-header">Jeremy's Section</h3>`
+
+    //MAIN FOR LOOP FOR ITERATING OVER ORDERS DATA
+    for (const order of ordersCopy) {
+        if (order.waiterID === 1) {
+            jeremySection +=`
+            <section class ="jeremy-order">
+            <div class="jeremy-header"><h1>Order #${order.id}</h1><h3>Table #${order.tableID}</h3><h3>Status: Complete</div>`
+            
+            //SEPARATE LOOP FOR DRINKS
+            jeremySection += `
+            <ul><h3>Drinks:</h3>`
+            for (const guestOrder of guestOrdersCopy) {
+                if (guestOrder.orderID === order.id) {
+                    jeremySection += `
+                    <li>${guestOrder.drinks}</li>`;
+                }
+            }  
+
+            //SEPARATE LOOP FOR APPS
+            jeremySection += "</ul>"
+            jeremySection += `
+            <ul><h3>Appetizers:</h3>`
+            for (const guestOrder of guestOrdersCopy) {
+                if (guestOrder.orderID === order.id) {
+                    jeremySection += `
+                    <li>${guestOrder.appetizer}</li>`
+                }
+            }
+
+            //SEPARATE LOOP FOR MAINS
+            jeremySection += "</ul>"
+            jeremySection += `
+            <ul><h3>Mains:</h3>`
+            for (const guestOrder of guestOrdersCopy) {
+                if (guestOrder.orderID === order.id) {
+                    jeremySection += `
+                    <li>${guestOrder.mainCourse}</li>`
+                }
+            }
+            //CLOSE CURRENT ORDER SECTION
+            jeremySection += "</ul></section>"
+        }
+    }
+    //PUT FINAL VARIABLE ON DOM
+    document.getElementById("jeremy").innerHTML = jeremySection;
+}
+
+//RUN FUNCTION
+displayJeremysOrders()
+
+//navBar animation
 
 window.onscroll = function () {shrinkNavbar()};
 
-
-
 const shrinkNavbar = () => {
-     if (document.body.scrollTop > 80|| document.documentElement.scrollTop > 80) {
+    const navBar = document.getElementById("header-bar")
+    if (document.body.scrollTop > 80|| document.documentElement.scrollTop > 80) {
         // navBar.style.height = "100px"
         navBar.classList.add("shrink-header");
 
@@ -235,5 +305,4 @@ const shrinkNavbar = () => {
    
         // navBar.style.height = "150px"
     }
-
 }

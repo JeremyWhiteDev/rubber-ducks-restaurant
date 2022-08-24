@@ -26,6 +26,7 @@ const waiters = [
 ];
 
 const orders = [
+
   //Jeremy's orders 1-3
 
   {
@@ -116,8 +117,8 @@ const orders = [
   },
   {
     id: 1201,
-    tableID: 4,
-    waiterID: 1,
+    tableID: 12,
+    waiterID: 4,
     orderTotal: 50.0,
     tip: 12,
   },
@@ -146,6 +147,7 @@ const orders = [
     tip: 12,
   },
 ];
+
 
 const guestOrders = [
   //Jeremy's guest orders
