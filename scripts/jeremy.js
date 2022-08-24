@@ -204,7 +204,7 @@ import { getGuestOrders } from "./data.js";
 
 // }
 
-//ADD SEPERATE DIV FOR TIP TOTALS AND TOTAL ORDERS COMPLETED.
+// ADD SEPERATE DIV FOR TIP TOTALS AND TOTAL ORDERS COMPLETED.
 // waiterSection += `<div class="jeremy-footer"><h3>Tip Total Today: $${jeremyTipTotal}</h3>
 // <h3>Total Orders Completed Today: ${jeremyOrderTotal}</h3></div>`
 // console.log(waiterSection);
@@ -292,6 +292,9 @@ const newDisplayJeremysOrders = () => {
   const guestOrdersCopy = getGuestOrders();
   const ordersCopy = getOrders();
 
+  //CREATE VARIABLE FOR TOTALLING TIPS
+  let jeremyTipTotal = 0;
+
   //FILTER DATA STRUCTURES FOR ONLY RELEVANT ORDERS
   const jeremyOrders = ordersCopy.filter((element) => {
     return element.waiterID === 1;
@@ -325,7 +328,7 @@ const newDisplayJeremysOrders = () => {
     for (const thisOrder of currentGuestOrders) {
       currentDrinks.push(`<li>${thisOrder.drinks}</li>`);
       currentApps.push(`<li>${thisOrder.appetizer}</li>`);
-      currentMains.push(`<li>${thisOrder.mains}</li>`);
+      currentMains.push(`<li>${thisOrder.mainCourse}</li>`);
     }
     //ADD ELEMENTS FROM THOSE ARRAYS
     jeremySection += `
@@ -342,9 +345,14 @@ const newDisplayJeremysOrders = () => {
                 `)}
                 </ul>
                 <ul><h3>Mains:</h3>
-                ${currentDrinks.join(`
+                ${currentMains.join(`
                 `)}</ul></section>`;
+    //ADD TIP TO JEREMY TIP TOTAL
+    jeremyTipTotal += order.tip;
   }
+  //ADD TIP TOTAL SECTION TO HTML VARIABLE
+  jeremySection += `<div class="jeremy-footer"><h3>Tip Total Today: $${jeremyTipTotal}</h3>
+  <h3>Total Orders Completed Today: ${"3"}</h3></div>`;
   //PUT FINISHED HTML SECTION ON DOM
   document.getElementById("jeremy").innerHTML = jeremySection;
   // console.log(jeremySection)
