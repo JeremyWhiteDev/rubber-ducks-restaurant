@@ -614,7 +614,7 @@ h1 {
     text-align: center;
     font-size: xx-large;
 }
-.jt-header {
+.jt-h1 {
   margin: auto;
   width: 50%;
   padding: 8px;
@@ -625,9 +625,7 @@ h1 {
   box-shadow: 0 0 6px black;
   border-radius: 12px;
   background-color: rgba(233, 127, 57, 0.986);
-
 }
-
 .jt-order {
   width: 96%;
   padding: 8px;
@@ -639,9 +637,7 @@ h1 {
   background-color: rgba(233, 127, 57, 0.986);
   font-family: 'Dancing Script';
   list-style: none;
-
 }
-
 .jt-order-contents {
   list-style: none;
 }
