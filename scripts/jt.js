@@ -2,171 +2,91 @@ import { getWaiters } from "./data.js";
 import { getOrders } from "./data.js";
 import { getGuestOrders } from "./data.js";
 
-const waiterCopy = getWaiters();
-// console.log(waiterCopy);
+const displayjtOrders =() => {
 
- const ordersCopy = getOrders();
-// console.log(ordersCopy)
+    const waiterCopy = getWaiters();
+    // console.log(waiterCopy);
 
-const guestOrdersCopy = getGuestOrders();
-//console.log(guestOrdersCopy)
+    const ordersCopy = getOrders();
+    // console.log(ordersCopy)
 
+    const guestCopy = getGuestOrders();
+    // console.log(guestCopy)
+
+    
 const jt = [
-    {
-            
-        orderID: 701,
+    {     
+            id:1,
+            orderID: 701,
             tableID: 7,
-            tableOrder: [
+            orderStatus: "Complete",
+            tableOrder: 
             {
-                
+                id:1,
                 guestSeat: 1,
                 drinks: "Sweet Tea",
                 appetizer: "French Fries",
-                mainCourse: "Hot Chicken Wings",
-                rewardsCustomer: true
+                mainCourse: "Hot Chicken Wings"
             },
-            {
-                
-                guestSeat: 2,
-                drinks: "Sweet Tea",
-                appetizer: "French Fries",
-                mainCourse: "Mild Wings",
-                rewardsCustomer: true 
-            }
-        ]
-            },
-            {
-            
-            orderNumber: 801,
-           
+            id:2,
+            orderID: 801,
             tableID: 8,
-            tableOrder: [
+            orderStatus: "Complete",
+            tableOrder:
             {
-                
+                id:3,
                 guestSeat: 1,
                 drinks: "Water",
                 appetizer: "Mac and Cheese bites",
                 mainCourse:"Medium Hot Wings",
-                rewardsCustomer:false
             },
-            {  
-                 
-                guestSeat: 2,
-                drinks: "Sweet Tea",
-                appetizer: "French Fries",
-                mainCourse: "Mild Wings",
-                rewardsCustomer: true
-            },   
-            {  
-                 
-                guestSeat: 3,
-                drinks: "Sweet Tea",
-                appetizer: "French Fries",
-                mainCourse: "Mild Wings",
-                rewardsCustomer: true 
-            }
-        ]
-            },
-            {
-
-            orderNumber: 901,
+            id:4,
+            orderID: 901,
             tableID: 9,
-            tableOrder: [
+            orderStatus: "Complete",
+            tableOrder:
             {
-                     
-                    guestSeat:1,
-                    drinks: "Coke a cola",
-                    appetizer: "Cheese Fries",
-                    mainCourse: "Extremely Hot Wings",
-                    rewardsCustomer: true
-            },
-            {
-                    
-                    guestSeat: 2,
-                    drinks: "Water",
-                    appetizer: "Mac and Cheese bites",
-                    mainCourse:"Medium Hot Wings",
-                    rewardsCustomer:false
-            },
-            {
-                    
-                    guestSeat: 3,
-                    drinks: "Sweet Tea",
-                    appetizer: "French Fries",
-                    mainCourse: "Mild Wings",
-                    rewardsCustomer: true
-            },
-            {   
-                    
-                    guestSeat: 4,
-                    drinks: "Sweet Tea",
-                    appetizer: "French Fries",
-                    mainCourse: "Mild Wings",
-                    rewardsCustomer: true
+                id:5,
+                guestSeat:1,
+                drinks: "Coke a cola",
+                appetizer: "Cheese Fries",
+                mainCourse: "Extremely Hot Wings",
             }
-        ] 
-    }
-]          
+    }   
+]  
+          
     
-
-let htmlSection = "";
-
+let htmlSection = ""
 
 
+//step one: loop through guest orders
+//step two: get each order to display on html
+//step three: reference orders for Table IDs
 
-
-for (const table of jt) {
- 
-     if (table.orderStatus === "Complete") {
-        htmlSection += `
-     <section class ="jt-order complete">`
-
-    
-    } else {
-        htmlSection += `
-     <section class ="jt-order">`}
-
-     
-    htmlSection +=`
-     <div class="jt-header"><h1>Order #${table.orderNumber}</h1>
-     <h3>Table #${table.tableID}</h3><h3>Status: ${table.orderStatus}</div>
-     
-     <ul class="jt-order-contents"><h3>Drinks:</h3>`;
-    
-    
-     for (let i = 0; i < table.tableOrder.length; i++) {
-        htmlSection += `
-        <li>${table.tableOrder[i]["drink"]}(#${table.tableOrder[i]["guestSeat"]})</li>`;
-    }
-   
-    htmlSection += `
-    </ul>`
-
-    
-     htmlSection += `
-     <ul class="jt-order-contents"><h3>Sides:</h3>`;
-     for (let i = 0; i < table.tableOrder.length; i++) {
-        htmlSection += `
-        <li>${table.tableOrder[i]["side"]}(#${table.tableOrder[i]["guestSeat"]})</li>`;
+for(const orders of ordersCopy) {
+    if (orders.waiterID === 3) {
+        htmlSection +=`<section class="jt-order">
+             <div class="jt-header"><h1>Table ${orders.tableID}</h1><h1>Order ${orders.id}</h1>
+             </div>`
+             for(const guestOrders of guestCopy) {
+                 if (guestOrders.orderID === orders.id) {
+                 htmlSection +=`<ul class="jt-order-contents">
+                 <h3>Drink:</h3>
+                 <li>${guestOrders.drinks}</li>
+                 <h3>Appetizer:</h3>
+                 <li>${guestOrders.appetizer}</li>
+                 <h3>Main Course:</h3>
+                 <li>${guestOrders.mainCourse}</li>
+                 </ul>`
+                 htmlSection +=`</section>`
+                }
+            }
+        }
     }
 
-    htmlSection += `
-    </ul>`
 
-     htmlSection += `
-    <ul class="jt-order-contents"><h3>Main Course:</h3>`;
-     for (let i = 0; i < table.tableOrder.length; i++) {
-        htmlSection += `
-        <li>${table.tableOrder[i]["mainCourse"]}(#${table.tableOrder[i]["guestSeat"]})</li>`;
-    }
 
-    
-    htmlSection += `
-    </ul></section>`
-     
-   
 
+document.getElementById('jt').innerHTML = htmlSection;
 }
-//console.log(htmlSection);
-
-document.getElementById("jt").innerHTML = htmlSection;
+displayjtOrders()

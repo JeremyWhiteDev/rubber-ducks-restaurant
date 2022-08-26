@@ -269,13 +269,6 @@ const guestOrders = [
     mainCourse: "Medium Hot Wings",
   },
   {
-    id: 2,
-    orderID: 701,
-    drinks: "Sweet Tea",
-    appetizer: "French Fries",
-    mainCourse: "Mild Wings",
-  },
-  {
     id: 3,
     orderID: 801,
     drinks: "Water",
@@ -283,46 +276,11 @@ const guestOrders = [
     mainCourse: "Medium Hot Wings",
   },
   {
-    id: 4,
-    orderID: 801,
-    drinks: "Sweet Tea",
-    appetizer: "French Fries",
-    mainCourse: "Mild Wings",
-  },
-  {
-    id: 5,
-    orderID: 801,
-    drinks: "Sweet Tea",
-    appetizer: "French Fries",
-    mainCourse: "Mild Wings",
-  },
-  {
     id: 6,
     orderID: 901,
     drinks: "Coke a cola",
     appetizer: "Cheese Fries",
     mainCourse: "Extremely Hot Wings",
-  },
-  {
-    id: 7,
-    orderID: 901,
-    drinks: "Water",
-    appetizer: "Mac and Cheese bites",
-    mainCourse: "Medium Hot Wings",
-  },
-  {
-    id: 8,
-    orderID: 901,
-    drinks: "Sweet Tea",
-    appetizer: "French Fries",
-    mainCourse: "Mild Wings",
-  },
-  {
-    id: 9,
-    orderID: 901,
-    drinks: "Sweet Tea",
-    appetizer: "French Fries",
-    mainCourse: "Mild Wings",
   },
   //Kyles guest orders
   {
