@@ -352,7 +352,7 @@ const newDisplayJeremysOrders = () => {
   }
   //ADD TIP TOTAL SECTION TO HTML VARIABLE
   jeremySection += `<div class="jeremy-footer"><h3>Tip Total Today: $${jeremyTipTotal}</h3>
-  <h3>Total Orders Completed Today: ${"3"}</h3></div>`;
+  <h3>Total Orders Completed Today: ${"1"}</h3></div>`;
   //PUT FINISHED HTML SECTION ON DOM
   document.getElementById("jeremy").innerHTML = jeremySection;
   // console.log(jeremySection)
