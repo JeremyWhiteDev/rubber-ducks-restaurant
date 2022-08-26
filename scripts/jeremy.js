@@ -3,7 +3,6 @@ import { getWaiters } from "./data.js";
 import { getOrders } from "./data.js";
 import { getGuestOrders } from "./data.js";
 
-
 //RESTAURANT PART 1
 
 //CREATE JEREMY OBJECT WITH ARRAY OF ORDERS
@@ -131,7 +130,7 @@ import { getGuestOrders } from "./data.js";
 //             }
 //         ]
 //     }
-    
+
 // ]
 
 //START HTML CODE
@@ -141,35 +140,34 @@ import { getGuestOrders } from "./data.js";
 
 //ALGORITHM for FOR LOOP
 //  I'm going to: grab the orders. For each order I'm going to use the order # and Table    number as a header. I'm then going to go to the table order section and format it to be the following:
-//  Drinks: water(seat Number), 
+//  Drinks: water(seat Number),
 //  appetizers: curly fries(seat number),
 //  main courses: meal(seat Number)
 
 //START FOR LOOP
 // for (const table of jeremy) {
-    //IF ORDER IS COMPLETE, ADD "complete" CLASS
-    //  if (table.orderStatus === "Complete") {
-    //     jeremyTipTotal += table.tip;
-    //     jeremyOrderTotal += 1;
-    //     waiterSection += `
-    //  <section class ="jeremy-order complete">
-    //  <div class="jeremy-header"><h1>Order #${table.orderNumber}</h1>
-    //  <h3>Table #${table.tableID}</h3><h3>Status: ${table.orderStatus}</h3><h3>Tip for Order: $${table.tip}</div>
-    //  </section>`
+//IF ORDER IS COMPLETE, ADD "complete" CLASS
+//  if (table.orderStatus === "Complete") {
+//     jeremyTipTotal += table.tip;
+//     jeremyOrderTotal += 1;
+//     waiterSection += `
+//  <section class ="jeremy-order complete">
+//  <div class="jeremy-header"><h1>Order #${table.orderNumber}</h1>
+//  <h3>Table #${table.tableID}</h3><h3>Status: ${table.orderStatus}</h3><h3>Tip for Order: $${table.tip}</div>
+//  </section>`
 
-    //ELSE, JUST ADD START OF HTMLSECTION
+//ELSE, JUST ADD START OF HTMLSECTION
 //     } else {
 //         waiterSection += `
 //      <section class ="jeremy-order">`
-
 
 //      // ADD DIV FOR HEADER AND START SECTION FOR DRINKS
 //     waiterSection +=`
 //      <div class="jeremy-header"><h1>Order #${table.orderNumber}</h1>
 //      <h3>Table #${table.tableID}</h3><h3>Status: ${table.orderStatus}</div>
-     
+
 //      <ul><h3>Drinks:</h3>`;
-    
+
 //      //SEPARATE LOOP FOR JUST TARGETING DRINKS
 //      for (let i = 0; i < table.tableOrder.length; i++) {
 //         waiterSection += `
@@ -204,22 +202,15 @@ import { getGuestOrders } from "./data.js";
 //     </ul></section>`
 // }
 
-
 // }
 
-//ADD SEPERATE DIV FOR TIP TOTALS AND TOTAL ORDERS COMPLETED.
+// ADD SEPERATE DIV FOR TIP TOTALS AND TOTAL ORDERS COMPLETED.
 // waiterSection += `<div class="jeremy-footer"><h3>Tip Total Today: $${jeremyTipTotal}</h3>
 // <h3>Total Orders Completed Today: ${jeremyOrderTotal}</h3></div>`
 // console.log(waiterSection);
 
 //DISPLAY ON DOM
 // document.getElementById("jeremy").innerHTML = waiterSection;
-
-
-
-
-
-
 
 //RESTAURANT PART 2
 
@@ -232,77 +223,156 @@ import { getGuestOrders } from "./data.js";
 
 //FUNCTION FOR DISPLAYING ORDERS TO DOM
 const displayJeremysOrders = () => {
+  // ASSIGN DATA COPIES TO VARIABLES
+  const waiterCopy = getWaiters();
+  const ordersCopy = getOrders();
+  const guestOrdersCopy = getGuestOrders();
 
-    // ASSIGN DATA COPIES TO VARIABLES
-    const waiterCopy = getWaiters();
-    const ordersCopy = getOrders();
-    const guestOrdersCopy = getGuestOrders();
+  //START HTML SECTION
+  let jeremySection = `<h3 class="section-header">Jeremy's Section</h3>`;
 
-    //START HTML SECTION
-    let jeremySection = `<h3 class="section-header">Jeremy's Section</h3>`
-
-    //MAIN FOR LOOP FOR ITERATING OVER ORDERS DATA
-    for (const order of ordersCopy) {
-        if (order.waiterID === 1) {
-            jeremySection +=`
+  //MAIN FOR LOOP FOR ITERATING OVER ORDERS DATA
+  for (const order of ordersCopy) {
+    if (order.waiterID === 1) {
+      jeremySection += `
             <section class ="jeremy-order">
-            <div class="jeremy-header"><h1>Order #${order.id}</h1><h3>Table #${order.tableID}</h3><h3>Status: Complete</div>`
-            
-            //SEPARATE LOOP FOR DRINKS
-            jeremySection += `
-            <ul><h3>Drinks:</h3>`
-            for (const guestOrder of guestOrdersCopy) {
-                if (guestOrder.orderID === order.id) {
-                    jeremySection += `
+            <div class="jeremy-header"><h1>Order #${order.id}</h1><h3>Table #${order.tableID}</h3><h3>Status: Complete</div>`;
+
+      //SEPARATE LOOP FOR DRINKS
+      jeremySection += `
+            <ul><h3>Drinks:</h3>`;
+      for (const guestOrder of guestOrdersCopy) {
+        if (guestOrder.orderID === order.id) {
+          jeremySection += `
                     <li>${guestOrder.drinks}</li>`;
-                }
-            }  
-
-            //SEPARATE LOOP FOR APPS
-            jeremySection += "</ul>"
-            jeremySection += `
-            <ul><h3>Appetizers:</h3>`
-            for (const guestOrder of guestOrdersCopy) {
-                if (guestOrder.orderID === order.id) {
-                    jeremySection += `
-                    <li>${guestOrder.appetizer}</li>`
-                }
-            }
-
-            //SEPARATE LOOP FOR MAINS
-            jeremySection += "</ul>"
-            jeremySection += `
-            <ul><h3>Mains:</h3>`
-            for (const guestOrder of guestOrdersCopy) {
-                if (guestOrder.orderID === order.id) {
-                    jeremySection += `
-                    <li>${guestOrder.mainCourse}</li>`
-                }
-            }
-            //CLOSE CURRENT ORDER SECTION
-            jeremySection += "</ul></section>"
         }
+      }
+
+      //SEPARATE LOOP FOR APPS
+      jeremySection += "</ul>";
+      jeremySection += `
+            <ul><h3>Appetizers:</h3>`;
+      for (const guestOrder of guestOrdersCopy) {
+        if (guestOrder.orderID === order.id) {
+          jeremySection += `
+                    <li>${guestOrder.appetizer}</li>`;
+        }
+      }
+
+      //SEPARATE LOOP FOR MAINS
+      jeremySection += "</ul>";
+      jeremySection += `
+            <ul><h3>Mains:</h3>`;
+      for (const guestOrder of guestOrdersCopy) {
+        if (guestOrder.orderID === order.id) {
+          jeremySection += `
+                    <li>${guestOrder.mainCourse}</li>`;
+        }
+      }
+      //CLOSE CURRENT ORDER SECTION
+      jeremySection += "</ul></section>";
     }
-    //PUT FINAL VARIABLE ON DOM
-    document.getElementById("jeremy").innerHTML = jeremySection;
-}
+  }
+  //PUT FINAL VARIABLE ON DOM
+  document.getElementById("jeremy").innerHTML = jeremySection;
+};
+
+//REFACTOR PT 3
+// filter ordersCopy by waiter id,
+// filter guestOrdersCopy to only have objects that have orderIDs that exist in the filtered ordersCopy list
+//loop over the top level orders array
+//filter JeremyGuestOrders again to only have orders that match the current orderID
+//create empty arrays for drinks, apps, and mains
+//loop over the filterd order array, which only has the orders of the current target, and push the respective food items to theire respective arrays
+//use string interpolation and join method to create order card.
+
+//NEW FUNCTION FOR DISPLAYING ORDERS TO DOM
+const newDisplayJeremysOrders = () => {
+  //GET FULL DATA STRUCTRES
+  const guestOrdersCopy = getGuestOrders();
+  const ordersCopy = getOrders();
+
+  //CREATE VARIABLE FOR TOTALLING TIPS
+  let jeremyTipTotal = 0;
+
+  //FILTER DATA STRUCTURES FOR ONLY RELEVANT ORDERS
+  const jeremyOrders = ordersCopy.filter((element) => {
+    return element.waiterID === 1;
+  });
+  const jeremyGuestOrders = guestOrdersCopy.filter((element) => {
+    if (
+      jeremyOrders.find((x) => {
+        return x.id === element.orderID;
+      })
+    ) {
+      return element;
+    }
+  });
+  //CREATE VARIABLE TO ADD HTML TO
+  let jeremySection = `<h3 class="section-header">Jeremy's Section</h3>`;
+  //MAIN LOOP THROUGH ORDERS
+  for (const order of jeremyOrders) {
+    //FILTER GUEST ORDERS THAT ONLY MATCH ID OF CURRENT ORDER
+    const currentGuestOrders = jeremyGuestOrders.filter((element) => {
+      if (order.id === element.orderID) {
+        return element;
+      }
+    });
+
+    //CREATE ARRAYS TO PUSH SPECIFC ORDER ITEMS TO
+    const currentDrinks = [];
+    const currentApps = [];
+    const currentMains = [];
+
+    //FOR LOOP FOR ITERATING OVER FILTERED ORDERS, CREATING ARRAYS OF SPECIFC ITEMS FOR THE CURRENT ORDER
+    for (const thisOrder of currentGuestOrders) {
+      currentDrinks.push(`<li>${thisOrder.drinks}</li>`);
+      currentApps.push(`<li>${thisOrder.appetizer}</li>`);
+      currentMains.push(`<li>${thisOrder.mainCourse}</li>`);
+    }
+    //ADD ELEMENTS FROM THOSE ARRAYS
+    jeremySection += `
+                <section class ="jeremy-order">
+                <div class="jeremy-header"><h1>Order #${
+                  order.id
+                }</h1><h3>Table #${order.tableID}</h3><h3>Status: Complete</div>
+                <ul><h3>Drinks:</h3>
+                ${currentDrinks.join(`
+                `)}
+                </ul>
+                <ul><h3>Appetizers:</h3>
+                ${currentApps.join(`
+                `)}
+                </ul>
+                <ul><h3>Mains:</h3>
+                ${currentMains.join(`
+                `)}</ul></section>`;
+    //ADD TIP TO JEREMY TIP TOTAL
+    jeremyTipTotal += order.tip;
+  }
+  //ADD TIP TOTAL SECTION TO HTML VARIABLE
+  jeremySection += `<div class="jeremy-footer"><h3>Tip Total Today: $${jeremyTipTotal}</h3>
+  <h3>Total Orders Completed Today: ${"1"}</h3></div>`;
+  //PUT FINISHED HTML SECTION ON DOM
+  document.getElementById("jeremy").innerHTML = jeremySection;
+  // console.log(jeremySection)
+};
 
 //RUN FUNCTION
-displayJeremysOrders()
-
+//displayJeremysOrders()
+newDisplayJeremysOrders();
+//
 //navBar animation
 
-window.onscroll = function () {shrinkNavbar()};
+window.onscroll = function () {
+  shrinkNavbar();
+};
 
 const shrinkNavbar = () => {
-    const navBar = document.getElementById("header-bar")
-    if (document.body.scrollTop > 80|| document.documentElement.scrollTop > 80) {
-        // navBar.style.height = "100px"
-        navBar.classList.add("shrink-header");
-
-    } else { 
-        navBar.classList.remove("shrink-header");
-   
-        // navBar.style.height = "150px"
-    }
-}
+  const navBar = document.getElementById("header-bar");
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    navBar.classList.add("shrink-header");
+  } else {
+    navBar.classList.remove("shrink-header");
+  }
+};

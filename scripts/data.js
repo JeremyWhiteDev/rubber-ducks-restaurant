@@ -26,15 +26,20 @@ const waiters = [
 ];
 
 const orders = [
-
   //Jeremy's orders 1-3
-
   {
     id: 101,
     tableID: 1,
     waiterID: 1,
     orderTotal: 40.0,
     tip: 9,
+  },
+  {
+    id: 102,
+    tableID: 1,
+    waiterID: 1,
+    orderTotal: 50.0,
+    tip: 12,
   },
   {
     id: 201,
@@ -50,9 +55,7 @@ const orders = [
     orderTotal: 50.0,
     tip: 12,
   },
-
   //Mitchell's orders 4-6
-
   {
     id: 401,
     tableID: 4,
@@ -74,9 +77,7 @@ const orders = [
     orderTotal: 50.0,
     tip: 12,
   },
-
   //JT's orders 7-9
-
   {
     id: 701,
     tableID: 7,
@@ -98,9 +99,7 @@ const orders = [
     orderTotal: 50.0,
     tip: 12,
   },
-
   //Kyle's orders 10-12
-
   {
     id: 1001,
     tableID: 10,
@@ -122,9 +121,7 @@ const orders = [
     orderTotal: 50.0,
     tip: 12,
   },
-
   //Ganesh's orders 13-15
-
   {
     id: 1301,
     tableID: 13,
@@ -147,7 +144,6 @@ const orders = [
     tip: 12,
   },
 ];
-
 
 const guestOrders = [
   //Jeremy's guest orders
@@ -350,9 +346,6 @@ const guestOrders = [
     appetizer: "Chips and Salsa",
     mainCourse: "Feeling Peckish Chicken Quesadilla",
   },
-
-  //Ganesh's guest orders
-
   {
     id: 1,
     orderID: 1301,
