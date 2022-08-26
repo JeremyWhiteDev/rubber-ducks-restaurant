@@ -27,20 +27,12 @@ const waiters = [
 
 const orders = [
   //Jeremy's orders 1-3
-
   {
     id: 101,
     tableID: 1,
     waiterID: 1,
     orderTotal: 40.0,
     tip: 9,
-  },
-  {
-    id: 102,
-    tableID: 1,
-    waiterID: 1,
-    orderTotal: 33.0,
-    tip: 5,
   },
   {
     id: 201,
@@ -56,9 +48,7 @@ const orders = [
     orderTotal: 50.0,
     tip: 12,
   },
-
   //Mitchell's orders 4-6
-
   {
     id: 401,
     tableID: 4,
@@ -80,9 +70,7 @@ const orders = [
     orderTotal: 50.0,
     tip: 12,
   },
-
   //JT's orders 7-9
-
   {
     id: 701,
     tableID: 7,
@@ -104,9 +92,7 @@ const orders = [
     orderTotal: 50.0,
     tip: 12,
   },
-
   //Kyle's orders 10-12
-
   {
     id: 1001,
     tableID: 10,
@@ -128,9 +114,7 @@ const orders = [
     orderTotal: 50.0,
     tip: 12,
   },
-
   //Ganesh's orders 13-15
-
   {
     id: 1301,
     tableID: 13,
@@ -355,8 +339,57 @@ const guestOrders = [
     appetizer: "Chips and Salsa",
     mainCourse: "Feeling Peckish Chicken Quesadilla",
   },
-  //Ganesh's guest orders
+  {
+    id: 1,
+    orderID: 1301,
+    drinks: "Soda",
+    appetizer: "Fried Pickles",
+    mainCourse: "Fried Chicken Sandwich",
+  },
+  {
+    id: 2,
+    orderID: 1301,
+    drinks: "Ice Tea",
+    appetizer: "French Fries",
+    mainCourse: "House Chicken Salad",
+  },
+  {
+    id: 3,
+    orderID: 1301,
+    drinks: "Diet Soda",
+    appetizer: "House Special Chips",
+    mainCourse: "Meatball Pasta",
+  },
+  {
+    id: 4,
+    orderID: 1401,
+    drinks: "Lemonade",
+    appetizer: "Tomato Basil Soup",
+    mainCourse: "Fried Chicken Sandwich",
+  },
+  {
+    id: 5,
+    orderID: 1401,
+    drinks: "Iced Tea",
+    appetizer: "French Fries",
+    mainCourse: "Cesar salad",
+  },
+  {
+    id: 6,
+    orderID: 1401,
+    drinks: "Soda",
+    appetizer: "Bruschetta",
+    mainCourse: "Chciken Alfredo",
+  },
+  {
+    id: 7,
+    orderID: 1501,
+    drinks: "Diet Soda",
+    appetizer: "Chicken Wings",
+    mainCourse: "Grilled Chicken Sandwich",
+  },
 ];
+
 export const getWaiters = () => {
   const copyOfWaiters = waiters.map((server) => ({ ...server }));
   return copyOfWaiters;
