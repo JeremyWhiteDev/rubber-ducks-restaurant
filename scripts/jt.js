@@ -5,13 +5,13 @@ import { getGuestOrders } from "./data.js";
 const displayjtOrders =() => {
 
     const waiterCopy = getWaiters();
-    console.log(waiterCopy);
+    // console.log(waiterCopy);
 
     const ordersCopy = getOrders();
-    console.log(ordersCopy)
+    // console.log(ordersCopy)
 
     const guestCopy = getGuestOrders();
-    console.log(guestCopy)
+    // console.log(guestCopy)
 
     
 const jt = [
@@ -19,6 +19,7 @@ const jt = [
             id:1,
             orderID: 701,
             tableID: 7,
+            orderStatus: "Complete",
             tableOrder: 
             {
                 id:1,
@@ -30,6 +31,7 @@ const jt = [
             id:2,
             orderID: 801,
             tableID: 8,
+            orderStatus: "Complete",
             tableOrder:
             {
                 id:3,
@@ -41,6 +43,7 @@ const jt = [
             id:4,
             orderID: 901,
             tableID: 9,
+            orderStatus: "Complete",
             tableOrder:
             {
                 id:5,
@@ -53,7 +56,7 @@ const jt = [
 ]  
           
     
-let htmlSection = `<div class="jt-h1"><h1>Table</h1>`
+let htmlSection = ""
 
 
 //step one: loop through guest orders
@@ -62,34 +65,28 @@ let htmlSection = `<div class="jt-h1"><h1>Table</h1>`
 
 for(const orders of ordersCopy) {
     if (orders.waiterID === 3) {
-        for(const guestOrders of guestCopy) {
-            if (guestOrders.orderID === orders.id) 
-             htmlSection +=` ${orders.tableID}
-
-            <ul>
-                 <li>Drink: ${guestOrders.drinks}</li>
-                 <li>Appetizer: ${guestOrders.appetizer}</li>
-                 <li>Main Course: ${guestOrders.mainCourse}</li>
-             <ul>`
-             
-             
-             
+        htmlSection +=`<section class="jt-order">
+             <div class="jt-header"><h1>Table ${orders.tableID}</h1><h1>Order ${orders.id}</h1>
+             </div>`
+             for(const guestOrders of guestCopy) {
+                 if (guestOrders.orderID === orders.id) {
+                 htmlSection +=`<ul class="jt-order-contents">
+                 <h3>Drink:</h3>
+                 <li>${guestOrders.drinks}</li>
+                 <h3>Appetizer:</h3>
+                 <li>${guestOrders.appetizer}</li>
+                 <h3>Main Course:</h3>
+                 <li>${guestOrders.mainCourse}</li>
+                 </ul>`
+                 htmlSection +=`</section>`
+                }
             }
         }
     }
 
-    for (const orders of guestCopy) {
-        if (orders.waiterID === 3) {
-        htmlSection += ` <h1>Table ${orders.tableID}</h1>
-        // <ul>
-        //     <li> Order Number: ${orders.orderID}</li>
-        //     <li>Drink: ${orders.drinks}</li>
-        //     <li>Appetizer: ${orders.appetizer}</li>
-        //     <li>Main Course: ${orders.mainCourse}</li>
-        // </ul>`
-        }
-    }
 
+
+console.log(htmlSection)
 document.getElementById('jt').innerHTML = htmlSection;
 }
 displayjtOrders()
