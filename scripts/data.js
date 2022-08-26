@@ -35,6 +35,13 @@ const orders = [
     tip: 9,
   },
   {
+    id: 102,
+    tableID: 1,
+    waiterID: 1,
+    orderTotal: 50.0,
+    tip: 12,
+  },
+  {
     id: 201,
     tableID: 2,
     waiterID: 1,
