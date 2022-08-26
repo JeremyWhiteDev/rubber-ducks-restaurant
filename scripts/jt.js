@@ -86,7 +86,7 @@ for(const orders of ordersCopy) {
 
 
 
-console.log(htmlSection)
+
 document.getElementById('jt').innerHTML = htmlSection;
 }
 displayjtOrders()
