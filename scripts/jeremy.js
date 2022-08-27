@@ -277,6 +277,8 @@ const displayJeremysOrders = () => {
   document.getElementById("jeremy").innerHTML = jeremySection;
 };
 
+//PROBLEM WITH ABOVE LOOP: 16 Orders, and 29 Guest Orders, exponential relationship of iteration. Resulting in 15*(29 * 3) iterations = 1305 iterations for a small data set. For a larger data set, example 100 orders, 300 guest orders. would result in 100*(300*3) iterations = 90,000 Iterations.
+
 //REFACTOR PT 3
 // filter ordersCopy by waiter id,
 // filter guestOrdersCopy to only have objects that have orderIDs that exist in the filtered ordersCopy list
@@ -357,6 +359,8 @@ const newDisplayJeremysOrders = () => {
   document.getElementById("jeremy").innerHTML = jeremySection;
   // console.log(jeremySection)
 };
+
+//RESULTING PERFORMANCE OF ABOVE LOOP:  Outside of loop, I do two iterations, inside first loop, 1 iteration to filter, and "3" iterations to get order details for everyone at table, loop. So for original dataset, I have 2 + (4*(1+3) = 18 iterations over data, and for example of 100 orders and 300 guest orders, only 20% are jeremy's, which equals 20 orders and 60 guest orders, which would be 2+(20(1 +3)) = 82 iterations
 
 //RUN FUNCTION
 //displayJeremysOrders()
